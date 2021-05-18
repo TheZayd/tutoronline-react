@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import stars from './assets/stars2.png';
+import tutor from './assets/tutor.jpg';
+import library from './assets/library.jpg';
+
 
 function App() {
   return (
@@ -45,7 +49,7 @@ function App() {
     <div className="row bg-image">
         <div className="col-2"></div>
         <div className="col to-review-container">
-            <img src="assets/library.jpg"/>
+            <img src={ library } />
             <div className="reviews">
                 <div className="bg-text">
                     <div className="title">
@@ -57,7 +61,7 @@ function App() {
                         <div className="row">
                             <div className="col-2">
                                 <div className="user-image">
-                                    <img src="assets/tutor.jpg"/>
+                                    <img src={ tutor } />
                                 </div>
                             </div>
                             <div className="col-10">
@@ -69,7 +73,7 @@ function App() {
                                         Parent, 31 lessons for A-Level History and English
                                     </div>
                                     <div className="stars-rating">
-                                        <img src="assets/stars2.png"/>
+                                        <img src={ stars } />
                                     </div>
                                 </div>
                             </div>
