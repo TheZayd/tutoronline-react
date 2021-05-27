@@ -1,11 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import stars from './assets/stars2.png';
 import tutor from './assets/tutor.jpg';
 import library from './assets/library.jpg';
+import axios from 'axios';
 
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+        apiResponse: {}
+    }
+  }
+
+  componentDidMount() {
+     axios.get('http://localhost:8080/api/v1/reviews')
+          .then((response) => this.setState({apiResponse: response.data}));
+  }
+
+  render() {
   return (
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -67,10 +82,10 @@ function App() {
                             <div className="col-10">
                                 <div className="review-highlights">
                                     <div className="name">
-                                        John Smith
+                                        {this.state.apiResponse.name}
                                     </div>
                                     <div className="number-of-lessons">
-                                        Parent, 31 lessons for A-Level History and English
+                                        Parent, {this.state.apiResponse.lessons} lessons for A-Level History and English
                                     </div>
                                     <div className="stars-rating">
                                         <img src={ stars } />
@@ -83,8 +98,7 @@ function App() {
                             <div className="col">
                                 <div className="complete-review">
                                     <h2>
-                                        "TutorOnline has helped my son to achieve the results he needed and provided him
-                                        with efficient, hands-on learning to help him ace his A-Levels."
+                                        "{this.state.apiResponse.review}"
                                     </h2>
                                 </div>
                             </div>
@@ -135,6 +149,9 @@ function App() {
 
     </div>
   );
+  }
+
+  
 }
 
 export default App;
