@@ -82,8 +82,9 @@
 }
 
 .footer {
-    background-color: chocolate;
-    color: white;
+  background-color: chocolate;
+  color: white;
+  padding: 3em;
 }
 
 /* Style all font awesome icons */
@@ -118,4 +119,20 @@
 .fa-instagram {
     background: rgba(230, 11, 44, 1);
     color: white;
+}
+
+/*.social-media-footer {*/
+/*  display: flex;*/
+/*}*/
+
+.social-media-footer > .row {
+  padding: 0.5em;
+}
+
+.row > .fa {
+  margin-right: 0.5em;
+}
+
+.bold {
+  font-weight: 700;
 }

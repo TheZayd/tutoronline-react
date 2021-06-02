@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import stars from './assets/stars2.png';
-import tutor from './assets/tutor.jpg';
+import logo from './assets/logo.png';
+import logoTransparent from './assets/logo-transparent.png';
 import library from './assets/library.jpg';
 import axios from 'axios';
 
@@ -25,7 +26,7 @@ class App extends React.Component {
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="#">
-        <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy"/>
+        <img src={ logoTransparent } width="50" height="62" alt="" loading="lazy"/>
     </a>
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
@@ -76,7 +77,7 @@ class App extends React.Component {
                         <div className="row">
                             <div className="col-2">
                                 <div className="user-image">
-                                    <img src={ tutor } />
+                                    <img src={this.state.apiResponse.pathToPicture}  />
                                 </div>
                             </div>
                             <div className="col-10">
@@ -85,10 +86,10 @@ class App extends React.Component {
                                         {this.state.apiResponse.name}
                                     </div>
                                     <div className="number-of-lessons">
-                                        Parent, {this.state.apiResponse.lessons} lessons for A-Level History and English
+                                        Parent, {this.state.apiResponse.lessons} lessons for { this.state.apiResponse.subject }
                                     </div>
                                     <div className="stars-rating">
-                                        <img src={ stars } />
+                                        <img src={ this.state.apiResponse.stars == 5 ? "https://i.ibb.co/pjkbgV5/stars-5.png" : "https://i.ibb.co/yF9nxSj/stars-4png.png"} />
                                     </div>
                                 </div>
                             </div>
@@ -119,28 +120,41 @@ class App extends React.Component {
     </div>
     <div className="row footer">
         <div className="col">
-            <ul>
-                <li>
-                    <a>About us</a>
-                </li>
-                <li>
-                    <a>Becoming a tutor</a>
-                </li>
-                <li>
-                    <a>FAQs</a>
-                </li>
-                <li>
-                    <a>Contact us</a>
-                </li>
-                <li>
-                    <a>Privacy policy</a>
-                </li>
-            </ul>
+            <p className="bold">Company Information</p>
+            <p>About us</p>
+
+            <p>Becoming a tutor</p>
+
+            <p>FAQs</p>
+
+            <p>Contact us</p>
+
+            <p>Privacy policy</p>
+
         </div>
         <div className="col">
-            <a href="#" className="fa fa-facebook"></a>
-            <a href="#" className="fa fa-twitter"></a>
-            <a className="fa fa-instagram"></a>
+            <p className="bold">Popular Requests</p>
+            <p>Maths Tutor</p>
+
+            <p>English Tutor</p>
+
+            <p>Physics Tutor</p>
+
+            <p>Chemistry Tutor</p>
+
+            <p>Biology Tutor</p>
+
+        </div>
+        <div className="social-media-footer col">
+            <div className="row"><h3>We're here to help</h3></div>
+            <div className="row"><h5>+44 (0) 203 331 1224</h5></div>
+            <div className="row">support@tutoronline.co.uk</div>
+            <div className="row">
+                <a href="#" className="fa fa-facebook"></a>
+                <a href="#" className="fa fa-twitter"></a>
+                <a className="fa fa-instagram"></a>
+            </div>
+
         </div>
     </div>
 </div>
