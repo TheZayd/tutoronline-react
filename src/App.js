@@ -89,7 +89,7 @@ class App extends React.Component {
                                         Parent, {this.state.apiResponse.lessons} lessons for { this.state.apiResponse.subject }
                                     </div>
                                     <div className="stars-rating">
-                                        <img src={ this.state.apiResponse.stars == 5 ? "https://i.ibb.co/pjkbgV5/stars-5.png" : "https://i.ibb.co/yF9nxSj/stars-4png.png"} />
+                                        <img src={ this.state.apiResponse.stars == 5 ? "https://ibb.co/5W6WVJJ" : "https://ibb.co/S0CSV3d"} />
                                     </div>
                                 </div>
                             </div>
